@@ -36,6 +36,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'rspec-rails', '~> 4.0.0'
+  gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'capybara'
   gem 'webdrivers'

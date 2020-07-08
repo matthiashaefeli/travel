@@ -1,0 +1,22 @@
+<h1>Travel Times</h1>
+<p><%= link_to 'Add new Distance Calculation', new_travel_time_path, onclick: 'inputForm(event, this)' %></p>
+<table>
+  <thead>
+    <tr>
+      <td>Start Point</td>
+      <td>End Point</td>
+      <td>Distance</td>
+      <td>Duration</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @travel_times.each do |travel_time| %>
+      <tr>
+        <td><%= travel_time.start_point %></td>
+        <td><%= travel_time.end_point %></td>
+        <td><%= travel_time.distance %></td>
+        <td><%= travel_time.duration %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

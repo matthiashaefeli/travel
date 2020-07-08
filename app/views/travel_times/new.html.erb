@@ -1,0 +1,27 @@
+<%= form_with(url: "/create", method: "post", id: 'travelTimeForm') do %>
+  <table>
+    <tr>
+      <td>
+        <%= label_tag(:start_point, "Start Location:") %>
+      </td>
+      <td>
+        <%= text_field_tag(:start_point) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= label_tag(:end_point, "End Location:") %>
+      </td>
+      <td>
+        <%= text_field_tag(:end_point) %>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <%= submit_tag "Search" %>
+        <%= submit_tag "Cancel", onclick: 'cancelForm(event, this)' %>
+      </td>
+    </tr>
+  </table>
+<% end %>
