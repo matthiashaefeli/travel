@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2020_07_06_211658) do
     t.integer "user_id"
     t.string "start_point"
     t.string "end_point"
-    t.string "travel_time_car"
-    t.string "travel_time_walk"
+    t.string "duration"
+    t.string "distance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
