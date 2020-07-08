@@ -5,6 +5,10 @@ class TravelTimesController < ApplicationController
     @travel_times = TravelTime.order('created_at DESC')
   end
 
+  def new
+    render layout: false
+  end
+
   private
 
   def require_login
