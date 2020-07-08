@@ -5,3 +5,10 @@
 .container {
   flex-direction: row;
 }
+
+#travelTimeError {
+  max-width: 200px;
+  border: 1px solid red;
+  padding: 25Px;
+  display: none;
+}

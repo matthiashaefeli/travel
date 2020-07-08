@@ -1,22 +1,28 @@
 <h1>Travel Times</h1>
-<p><%= link_to 'Add new Distance Calculation', new_travel_time_path, onclick: 'inputForm(event, this)' %></p>
-<table>
-  <thead>
-    <tr>
-      <td>Start Point</td>
-      <td>End Point</td>
-      <td>Distance</td>
-      <td>Duration</td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @travel_times.each do |travel_time| %>
+<div id='travelTimeError'></div>
+<div>
+  <p>
+    <%= link_to 'Add new Distance Calculation',
+        new_travel_time_path,
+        onclick: 'inputForm()',
+        id: 'travelTimeFormLink',
+        remote: true %>
+  </p>
+</div>
+<div>
+  <table>
+    <thead>
       <tr>
-        <td><%= travel_time.start_point %></td>
-        <td><%= travel_time.end_point %></td>
-        <td><%= travel_time.distance %></td>
-        <td><%= travel_time.duration %></td>
+        <td>Start Point</td>
+        <td>End Point</td>
+        <td>Distance</td>
+        <td>Duration</td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody class='travelTimeTableBody'>
+      <% @travel_times.each do |travel_time| %>
+        <%= render partial: 'travel_time_row', locals: { travel_time: travel_time } %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
