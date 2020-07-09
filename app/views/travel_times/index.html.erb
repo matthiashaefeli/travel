@@ -10,19 +10,5 @@
   </p>
 </div>
 <div>
-  <table>
-    <thead>
-      <tr>
-        <td>Start Point</td>
-        <td>End Point</td>
-        <td>Distance</td>
-        <td>Duration</td>
-      </tr>
-    </thead>
-    <tbody class='travelTimeTableBody'>
-      <% @travel_times.each do |travel_time| %>
-        <%= render partial: 'travel_time_row', locals: { travel_time: travel_time } %>
-      <% end %>
-    </tbody>
-  </table>
+  <%= render partial: 'travel_time_table' %>
 </div>

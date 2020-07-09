@@ -10,6 +10,7 @@ require("channels")
 
 window.$ = $
 require("custom/travel_time")
+import "@fortawesome/fontawesome-free/js/all";
 
 
 

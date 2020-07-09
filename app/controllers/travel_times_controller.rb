@@ -33,6 +33,11 @@ class TravelTimesController < ApplicationController
     end
   end
 
+  def destroy
+    TravelTime.find(params[:id]).delete
+    render html: 'deleted'
+  end
+
   private
 
   def nested_hash_value(obj,key)
