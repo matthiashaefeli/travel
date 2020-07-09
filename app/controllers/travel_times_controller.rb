@@ -2,7 +2,7 @@ class TravelTimesController < ApplicationController
   before_action :require_login
 
   def index
-    @travel_times = TravelTime.order('created_at DESC')
+    @travel_times = current_user.travel_times.order('created_at DESC')
   end
 
   def new
@@ -21,20 +21,15 @@ class TravelTimesController < ApplicationController
     response_hash = JSON.parse(response.body, :symbolize_names => true)
 
     if response_hash[:status] == 'INVALID_REQUEST' || nested_hash_value(nested_hash_value(response_hash, :elements), :status) == 'ZERO_RESULTS'
-      render json: { error: 'Invalid Request' }
+      render json: { error: "Can't find any results with this Start and End Locations!" }
     else
       travel_time = TravelTime.new(start_point: response_hash[:origin_addresses].join,
                                    end_point: response_hash[:destination_addresses].join,
                                    distance: nested_hash_value(nested_hash_value(response_hash, :distance), :text),
                                    duration: nested_hash_value(nested_hash_value(response_hash, :duration), :text),
                                    user_id: current_user.id)
-
-      if travel_time.valid?
-        travel_time.save
-        render partial: 'travel_time_row', locals: { travel_time: travel_time }, layout: false
-      else
-        render json: { error: travel_time.errors.full_messages }
-      end
+      travel_time.save
+      render partial: 'travel_time_row', locals: { travel_time: travel_time }, layout: false
     end
   end
 
