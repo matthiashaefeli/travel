@@ -20,7 +20,29 @@ $ rails db:migrate
 ```
 $ rails s
 ```
+## Run test suit
 
+```
+$ cd travel
+$ rspec
+```
+Test coverage file: travel/coverage/index.html
 
-Deploy Travel to Heroku:
+## Deploy Travel to Heroku:
+
+```
+$ heroku login
+$ heroku create
+$ git config --list | grep heroku  # verify remote
+$ git push heroku master
+$ heroku ps  # check dynos
+$ heroku open  # open app in browser
+```
+
+Rails secret key config
+
+```
+$ rake secret
+$ heroku config:set SECRET_KEY_BASE='put here new generated key'
+```
 
