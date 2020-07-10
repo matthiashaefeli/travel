@@ -39,5 +39,13 @@ RSpec.describe TravelTimesController do
                               end_point: 'Albuquerque' }
       expect(response).to render_template(partial: '_travel_time_row')
     end
+
+    it 'cant find any routes' do
+      sign_in(FactoryBot.create(:user))
+      post :create, params: { start_point: 'switzerland',
+                              end_point: 'mexico' }
+      res = JSON.parse(response.body)
+      expect(res['error']).to eq('I cannot find any routes with the given data')
+    end
   end
 end
