@@ -1,24 +1,26 @@
-# README
+# Travel
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Travel is a rails app to calculate travel times with the given start and end locations.
 
-Things you may want to cover:
+## How to get set up locally
 
-* Ruby version
+Note: Travel uses PostgreSQL, so you'll need to have PostgreSQL installed in order to get the project running.
 
-* System dependencies
+```
+$ git clone https://github.com/matthiashaefeli/travel.git
+$ cd travel
+$ bundle install
+$ yarn
+$ rails db:create
+$ rails db:migrate
+````
 
-* Configuration
+## Running the server
 
-* Database creation
+```
+$ rails s
+```
 
-* Database initialization
 
-* How to run the test suite
+Deploy Travel to Heroku:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
