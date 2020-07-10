@@ -38,3 +38,14 @@ window.createTravelTime = (e) => {
     })
   }
 }
+
+window.delete_travel_time = (travel_time_id, trash) => {
+  const row = $(trash).closest('tr');
+  $.ajax({
+    url: '/travel_times/' + travel_time_id,
+    method: 'delete',
+    success: function(response) {
+      row.remove();
+    }
+  })
+}

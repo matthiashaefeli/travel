@@ -8,7 +8,7 @@ RSpec.describe 'Sign in', type: :system do
       visit new_user_session_path
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
-      click_on "Log in"
+      click_on 'Log in'
       expect(page).to have_content('Sign Out')
     end
   end
@@ -18,7 +18,7 @@ RSpec.describe 'Sign in', type: :system do
       visit new_user_session_path
       fill_in 'Email', with: 'example@example.com'
       fill_in 'Password', with: 'badpassword'
-      click_on "Log in"
+      click_on 'Log in'
       expect(page).to have_content('Invalid Email or password.')
     end
   end
