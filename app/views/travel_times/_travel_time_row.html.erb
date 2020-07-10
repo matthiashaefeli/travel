@@ -7,15 +7,3 @@
   <td><i class="fa fa-trash-alt fa-sm deleteTrash" onclick="delete_travel_time(<%= travel_time.id %>, this)"></i>
   </td>
 </tr>
-<script>
-function delete_travel_time(travel_time_id, trash) {
-  const row = $(trash).closest('tr');
-  $.ajax({
-    url: '/travel_times/' + travel_time_id,
-    method: 'delete',
-    success: function(response) {
-      row.remove();
-    }
-  })
-}
-</script>
