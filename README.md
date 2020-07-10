@@ -42,7 +42,7 @@ $ heroku open  # open app in browser
 Rails secret key config
 
 ```
-$ rake secret
-$ heroku config:set SECRET_KEY_BASE='put here new generated key'
+$ cat config/master.key
+$ heroku config:set RAILS_MASTER_KEY=key
 ```
 
