@@ -1,20 +1,36 @@
 <%= form_with url: travel_times_path, method: 'post', id: 'travelTimeForm' do %>
   <table>
     <tr>
-      <td>
-        <%= label_tag :start_point, "Start Location:" %>
-      </td>
-      <td>
-        <%= text_field_tag :start_point %>
-      </td>
+      <td><%= label_tag :start_point, 'Start Location' %></td>
+      <td><%= text_field_tag 'start_point' %></td>
     </tr>
     <tr>
-      <td>
-        <%= label_tag :end_point, "End Location:" %>
-      </td>
-      <td>
-        <%= text_field_tag :end_point %>
-      </td>
+      <td><%= label_tag :end_point, 'End Location' %></td>
+      <td><%= text_field_tag 'end_point' %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag :driving, 'Driving'%></td>
+      <td><%= radio_button_tag 'transit_mode', 'driving', true %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag :bus, 'Bus'%></td>
+      <td><%= radio_button_tag 'transit_mode', 'bus' %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag :subway, 'Subway' %></td>
+      <td><%= radio_button_tag 'transit_mode', 'subway' %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag :train, 'Train'%></td>
+      <td><%= radio_button_tag 'transit_mode', 'train' %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag :tram, 'Tram' %></td>
+      <td><%= radio_button_tag 'transit_mode', 'tram' %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag :rail, 'Rail' %></td>
+      <td><%= radio_button_tag 'transit_mode', 'rail' %></td>
     </tr>
     <tr>
       <td></td>

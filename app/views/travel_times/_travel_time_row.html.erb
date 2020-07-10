@@ -1,9 +1,10 @@
-<tr>
+<tr class='travelTimeTr'>
   <td><%= travel_time.start_point %></td>
   <td><%= travel_time.end_point %></td>
   <td><%= travel_time.distance %></td>
   <td><%= travel_time.duration %></td>
-  <td><i class="fa fa-trash-alt fa-sm" onclick="delete_travel_time(<%= travel_time.id %>, this)"></i>
+  <td><%= travel_time.transit_mode %></td>
+  <td><i class="fa fa-trash-alt fa-sm deleteTrash" onclick="delete_travel_time(<%= travel_time.id %>, this)"></i>
   </td>
 </tr>
 <script>

@@ -6,6 +6,7 @@ class CreateTravelTimes < ActiveRecord::Migration[6.0]
       t.string :end_point
       t.string :duration
       t.string :distance
+      t.string :transit_mode
 
       t.timestamps
     end

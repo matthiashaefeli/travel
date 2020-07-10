@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_211658) do
     t.string "end_point"
     t.string "duration"
     t.string "distance"
+    t.string "transit_mode"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

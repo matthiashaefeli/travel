@@ -5,10 +5,28 @@
 .container {
   flex-direction: row;
 }
-
 #travelTimeError {
   max-width: 200px;
   border: 1px solid red;
   padding: 25Px;
   display: none;
+}
+
+.deleteTrash:hover {
+  cursor: pointer;
+}
+
+.travelTimeResults {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.travelTimeResults,
+.travelTimeTr,
+.travelTimeTr > td {
+  border: 1px solid black;
+}
+
+.travelTimeResults thead {
+  background-color: #8F8CE7;
 }

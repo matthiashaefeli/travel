@@ -1,6 +1,5 @@
 .navBar {
   display: flex;
-  justify-content: space-around;
   background-color: #8F8CE7;
   height: 50px;
   align-items: center;
@@ -10,4 +9,11 @@
 .navBar > div > a {
   color: white;
   text-decoration: none;
+  align-self: flex-start;
+  padding-left: 20px;
+}
+
+.home {
+  width: 95%;
+  margin: auto;
 }
