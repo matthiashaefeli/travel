@@ -35,6 +35,7 @@ $ heroku login
 $ heroku create
 $ git config --list | grep heroku  # verify remote
 $ git push heroku master
+$ heroku ps:scale web=1  # ensure one dyno is running
 $ heroku ps  # check dynos
 $ heroku open  # open app in browser
 ```
